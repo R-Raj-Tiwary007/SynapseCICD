@@ -1,6 +1,6 @@
 name: workspace deployment | UAT
 
-on: [ workflow_dispatch ]
+on: 
     push:
         branches: [ workspace_publish ]
 jobs:
