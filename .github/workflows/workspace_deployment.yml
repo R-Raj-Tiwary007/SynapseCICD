@@ -9,16 +9,16 @@ jobs:
         runs-on: windows-latest
         steps:
         # Checks out your repository under $GITHUB_WORKSPACE, so your job can access it.
-        - uses: actions/checkout@v2
-        - uses: azure/synapse-workspace-deployment@release-1.0
-        with:
-          TargetWorkspaceName: 'mysynapse-uat'
-          TemplateFile: './TemplateForWorkspace.json'
-          ParametersFile: './TemplateParametersForWorkspace.json'
-          environment: 'Azure Public'
-          resourceGroup: 'SynapseCICD'
-          clientId: ${{secrets.CLIENT_ID}}
-          clientSecret:  ${{secrets.CLIENT_SECRET}}
-          subscriptionId: ${{secrets.SUBSCRIPTION_ID}}
-          tenantId: ${{secrets.TENANT_ID}}
-          operation: 'deploy'
+          - uses: actions/checkout@v2
+          - uses: azure/synapse-workspace-deployment@release-1.0
+            with:
+              TargetWorkspaceName: 'mysynapse-uat'
+              TemplateFile: './TemplateForWorkspace.json'
+              ParametersFile: './TemplateParametersForWorkspace.json'
+              environment: 'Azure Public'
+              resourceGroup: 'SynapseCICD'
+              clientId: ${{secrets.CLIENT_ID}}
+              clientSecret:  ${{secrets.CLIENT_SECRET}}
+              subscriptionId: ${{secrets.SUBSCRIPTION_ID}}
+              tenantId: ${{secrets.TENANT_ID}}
+              operation: 'deploy'
