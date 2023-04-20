@@ -12,14 +12,14 @@ jobs:
            - uses: actions/checkout@v2
            - uses: Azure/Synapse-workspace-deployment@V1.7.0
              with:
-              TargetWorkspaceName: 'mysynapse-uat'
-              TemplateFile: './synapse-deve/TemplateForWorkspace.json'
-              ParametersFile: './synapse-deve/TemplateParametersForWorkspace.json'
-              environment: 'Azure Public'
-              resourceGroup: 'SynapseCICD'
-              clientId: ${{secrets.CLIENT_ID}}
-              clientSecret:  ${{secrets.CLIENT_SECRET}}
-              subscriptionId: ${{secrets.SUBSCRIPTION_ID}}
-              tenantId: ${{secrets.TENANT_ID}}
+                  TargetWorkspaceName: 'mysynapse-uat'
+                  TemplateFile: './synapse-deve/TemplateForWorkspace.json'
+                  ParametersFile: './synapse-deve/TemplateParametersForWorkspace.json'
+                  environment: 'Azure Public'
+                  resourceGroup: 'SynapseCICD'
+                  clientId: ${{secrets.CLIENT_ID}}
+                  clientSecret:  ${{secrets.CLIENT_SECRET}}
+                  subscriptionId: ${{secrets.SUBSCRIPTION_ID}}
+                  tenantId: ${{secrets.TENANT_ID}}
          
       
