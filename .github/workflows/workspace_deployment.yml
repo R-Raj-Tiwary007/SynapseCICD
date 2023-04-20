@@ -13,8 +13,8 @@ jobs:
         - uses: azure/synapse-workspace-deployment@release-1.0
         with:
           TargetWorkspaceName: 'mysynapse-uat'
-          TemplateFile: './synapse-deve/TemplateForWorkspace.json'
-          ParametersFile: './synapse-deve/TemplateParametersForWorkspace.json'
+          TemplateFile: './TemplateForWorkspace.json'
+          ParametersFile: './TemplateParametersForWorkspace.json'
           environment: 'Azure Public'
           resourceGroup: 'SynapseCICD'
           clientId: ${{secrets.CLIENT_ID}}
