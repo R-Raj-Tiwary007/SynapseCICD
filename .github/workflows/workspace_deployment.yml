@@ -10,7 +10,7 @@ jobs:
         steps:
         # Checks out your repository under $GITHUB_WORKSPACE, so your job can access it.
           - uses: actions/checkout@v2
-          - uses: Azure/Synapse-workspace-deployment@latest
+          - uses: Azure/Synapse-workspace-deployment@v2.3.0
             with:
               TargetWorkspaceName: 'mysynapse-uat'
               TemplateFile: './synapse-deve/TemplateForWorkspace.json'
