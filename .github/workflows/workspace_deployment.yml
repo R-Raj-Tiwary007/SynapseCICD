@@ -18,7 +18,7 @@ jobs:
               environment: 'Azure Public'
               resourceGroup: 'SynapseCICD'
               clientId: ${{secrets.CLIENT_ID}}
-              clientSecret:  'dBA8Q~NHMhdLga27W1e1uqbbHyvmKe~jpGQVscbE'
+              clientSecret:  ${{secrets.CILENT_SECRET}}
               subscriptionId: ${{secrets.SUBSCRIPTION_ID}}
               tenantId: ${{secrets.TENANT_ID}}
          
