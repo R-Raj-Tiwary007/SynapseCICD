@@ -5,17 +5,23 @@
 		"workspaceName": {
 			"value": "synapse-deve"
 		},
-		"synapse-deve-WorkspaceDefaultSqlServer_connectionString": {
-			"value": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=tcp:synapse-deve.sql.azuresynapse.net,1433;Initial Catalog=@{linkedService().DBName}"
-		},
 		"Ls_adls_accountKey": {
 			"value": ""
+		},
+		"synapse-deve-WorkspaceDefaultSqlServer_connectionString": {
+			"value": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=tcp:synapse-deve.sql.azuresynapse.net,1433;Initial Catalog=@{linkedService().DBName}"
 		},
 		"Pipeline 1_properties_0_typeProperties": {
 			"value": ""
 		},
 		"Pipeline 2_properties_0_typeProperties": {
 			"value": ""
+		},
+		"Ls_adls_myurl": {
+			"value": "https://deveadls.dfs.core.windows.net/"
+		},
+		"synapse-deve-WorkspaceDefaultStorage_myurl": {
+			"value": "https://deveadls.dfs.core.windows.net"
 		},
 		"AutoResolveIntegrationRuntime_properties_typeProperties_computeProperties": {
 			"value": {

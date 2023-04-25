@@ -7,20 +7,28 @@
 			"metadata": "Workspace name",
 			"defaultValue": "synapse-deve"
 		},
+		"Ls_adls_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'Ls_adls'"
+		},
 		"synapse-deve-WorkspaceDefaultSqlServer_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'synapse-deve-WorkspaceDefaultSqlServer'",
 			"defaultValue": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=tcp:synapse-deve.sql.azuresynapse.net,1433;Initial Catalog=@{linkedService().DBName}"
-		},
-		"Ls_adls_accountKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'Ls_adls'"
 		},
 		"Pipeline 1_properties_0_typeProperties": {
 			"type": "int"
 		},
 		"Pipeline 2_properties_0_typeProperties": {
 			"type": "int"
+		},
+		"Ls_adls_myurl": {
+			"type": "string",
+			"defaultValue": "https://deveadls.dfs.core.windows.net/"
+		},
+		"synapse-deve-WorkspaceDefaultStorage_myurl": {
+			"type": "string",
+			"defaultValue": "https://deveadls.dfs.core.windows.net"
 		},
 		"AutoResolveIntegrationRuntime_properties_typeProperties_computeProperties": {
 			"type": "object",
@@ -99,6 +107,29 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('workspaceName'), '/Ls_adls')]",
+			"type": "Microsoft.Synapse/workspaces/linkedServices",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('Ls_adls_myurl')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('Ls_adls_accountKey')]"
+					}
+				},
+				"connectVia": {
+					"referenceName": "AutoResolveIntegrationRuntime",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('workspaceId'), '/integrationRuntimes/AutoResolveIntegrationRuntime')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('workspaceName'), '/synapse-deve-WorkspaceDefaultSqlServer')]",
 			"type": "Microsoft.Synapse/workspaces/linkedServices",
 			"apiVersion": "2019-06-01-preview",
@@ -130,7 +161,7 @@
 				"annotations": [],
 				"type": "AzureBlobFS",
 				"typeProperties": {
-					"url": "https://deveadls.dfs.core.windows.net"
+					"url": "[parameters('synapse-deve-WorkspaceDefaultStorage_myurl')]"
 				},
 				"connectVia": {
 					"referenceName": "AutoResolveIntegrationRuntime",
@@ -189,7 +220,7 @@
 			"apiVersion": "2019-06-01-preview",
 			"properties": {
 				"content": {
-					"query": "select 2+4",
+					"query": "select 2+5",
 					"metadata": {
 						"language": "sql"
 					},
@@ -202,29 +233,6 @@
 				"type": "SqlQuery"
 			},
 			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('workspaceName'), '/Ls_adls')]",
-			"type": "Microsoft.Synapse/workspaces/linkedServices",
-			"apiVersion": "2019-06-01-preview",
-			"properties": {
-				"annotations": [],
-				"type": "AzureBlobFS",
-				"typeProperties": {
-					"url": "https://deveadls.dfs.core.windows.net/",
-					"accountKey": {
-						"type": "SecureString",
-						"value": "[parameters('Ls_adls_accountKey')]"
-					}
-				},
-				"connectVia": {
-					"referenceName": "AutoResolveIntegrationRuntime",
-					"type": "IntegrationRuntimeReference"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('workspaceId'), '/integrationRuntimes/AutoResolveIntegrationRuntime')]"
-			]
 		}
 	]
 }
