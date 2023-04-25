@@ -3,7 +3,7 @@
         "contentVersion": "1.0.0.0",
         "parameters": {
                    "Ls_adls_myurl" : {
-                                 "value": "https://synapseadlsuat.dfs.core.windows.net/
+                                 "value": "https://synapseadlsuat.dfs.core.windows.net/"
                    }
 
         }
