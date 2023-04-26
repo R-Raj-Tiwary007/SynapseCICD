@@ -5,9 +5,6 @@
 		"workspaceName": {
 			"value": "synapse-deve"
 		},
-		"Ls_adls_accountKey": {
-			"value": ""
-		},
 		"synapse-deve-WorkspaceDefaultSqlServer_connectionString": {
 			"value": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=tcp:synapse-deve.sql.azuresynapse.net,1433;Initial Catalog=@{linkedService().DBName}"
 		},

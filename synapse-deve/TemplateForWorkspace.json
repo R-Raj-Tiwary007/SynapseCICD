@@ -7,10 +7,6 @@
 			"metadata": "Workspace name",
 			"defaultValue": "synapse-deve"
 		},
-		"Ls_adls_accountKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'Ls_adls'"
-		},
 		"synapse-deve-WorkspaceDefaultSqlServer_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'synapse-deve-WorkspaceDefaultSqlServer'",
@@ -114,11 +110,7 @@
 				"annotations": [],
 				"type": "AzureBlobFS",
 				"typeProperties": {
-					"url": "[parameters('Ls_adls_myurl')]",
-					"accountKey": {
-						"type": "SecureString",
-						"value": "[parameters('Ls_adls_accountKey')]"
-					}
+					"url": "[parameters('Ls_adls_myurl')]"
 				},
 				"connectVia": {
 					"referenceName": "AutoResolveIntegrationRuntime",
