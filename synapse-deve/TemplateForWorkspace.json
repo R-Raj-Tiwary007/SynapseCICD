@@ -20,7 +20,7 @@
 		},
 		"Ls_adls_myurl": {
 			"type": "string",
-			"defaultValue": "https://deveadls.dfs.core.windows.net/"
+			"defaultValue": "https://synapseadlsuat.dfs.core.windows.net/"
 		},
 		"synapse-deve-WorkspaceDefaultStorage_myurl": {
 			"type": "string",
