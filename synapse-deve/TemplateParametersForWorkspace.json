@@ -41,6 +41,9 @@
 		},
 		"SQL script 2_properties_content_currentConnection_poolName": {
 			"value": ""
+		},
+		"AzureDataLakeStorage1_myurl": {
+			"value": "https://deveadls.dfs.core.windows.net/"
 		}
 	}
 }

@@ -48,6 +48,10 @@
 		},
 		"SQL script 2_properties_content_currentConnection_poolName": {
 			"type": "string"
+		},
+		"AzureDataLakeStorage1_myurl": {
+			"type": "string",
+			"defaultValue": "https://deveadls.dfs.core.windows.net/"
 		}
 	},
 	"variables": {
@@ -225,6 +229,25 @@
 				"type": "SqlQuery"
 			},
 			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('workspaceName'), '/AzureDataLakeStorage1')]",
+			"type": "Microsoft.Synapse/workspaces/linkedServices",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('AzureDataLakeStorage1_myurl')]"
+				},
+				"connectVia": {
+					"referenceName": "AutoResolveIntegrationRuntime",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('workspaceId'), '/integrationRuntimes/AutoResolveIntegrationRuntime')]"
+			]
 		}
 	]
 }
