@@ -4,13 +4,7 @@
         "parameters": {
                    "Ls_adls_myurl" : {
                                  "value": "https://synapseadlsuat.dfs.core.windows.net/"
-                   },
-              
-                "synapse-deve-WorkspaceDefaultStorage_myurl" :{
-                                                   
-                                            "value": "https://synapseadlsuat.dfs.core.windows.net"
-        
-                                            }
+                   }
 
         }
 }
