@@ -15,7 +15,7 @@
 			"value": ""
 		},
 		"Ls_adls_myurl": {
-			"value": "https://deveadls.dfs.core.windows.net/"
+			"value": "https://synapseadlsuat.dfs.core.windows.net/"
 		},
 		"synapse-deve-WorkspaceDefaultStorage_myurl": {
 			"value": "https://deveadls.dfs.core.windows.net"
