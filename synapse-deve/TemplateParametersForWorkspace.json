@@ -14,6 +14,9 @@
 		"Pipeline 2_properties_0_typeProperties": {
 			"value": ""
 		},
+		"AzureDataLakeStorage1_myurl": {
+			"value": "https://deveadls.dfs.core.windows.net/"
+		},
 		"Ls_adls_myurl": {
 			"value": "https://deveadls.dfs.core.windows.net/"
 		},
@@ -41,9 +44,6 @@
 		},
 		"SQL script 2_properties_content_currentConnection_poolName": {
 			"value": ""
-		},
-		"AzureDataLakeStorage1_myurl": {
-			"value": "https://deveadls.dfs.core.windows.net/"
 		}
 	}
 }
