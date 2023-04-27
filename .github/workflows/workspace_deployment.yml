@@ -15,12 +15,7 @@ jobs:
               TargetWorkspaceName: 'mysynapse-uat'
               TemplateFile: './synapse-deve/TemplateForWorkspace.json'
               ParametersFile: './synapse-deve/TemplateParametersForWorkspace.json'
-              OverrideArmParameters: |
-               {   
-                 "Ls_adls_myurl" : {
-                                 "value": "https://synapseadlsuat.dfs.core.windows.net/"
-                   }
-                 }
+              OverrideArmParameters: './synapse-deve/override_parameters.json'
               environment: 'Azure Public'
               resourceGroup: 'SynapseCICD'
               clientId: ${{secrets.CLIENT_ID}}
