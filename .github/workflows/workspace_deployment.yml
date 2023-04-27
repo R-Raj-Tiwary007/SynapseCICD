@@ -14,8 +14,8 @@ jobs:
             with:
               TargetWorkspaceName: 'mysynapse-uat'
               TemplateFile: './synapse-deve/TemplateForWorkspace.json'
-              ParametersFile: './synapse-deve/TemplateParametersForWorkspace.json'
-              OverrideArmParameters: './synapse-deve/override_parameters.json'
+              ParametersFile: './synapse-deve/override_parameters.json'
+              #OverrideArmParameters: './synapse-deve/override_parameters.json'
               environment: 'Azure Public'
               resourceGroup: 'SynapseCICD'
               clientId: ${{secrets.CLIENT_ID}}
