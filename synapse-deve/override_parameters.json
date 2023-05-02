@@ -47,5 +47,6 @@
 		},
 		"Ls_adls2_myurl": {
 			"value": "https://synapseadlsuat.dfs.core.windows.net/"
+		}
 	}
 }
