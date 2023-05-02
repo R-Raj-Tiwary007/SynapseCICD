@@ -44,6 +44,8 @@
 		},
 		"AzureDataLakeStorage1_myurl": {
 			"value": "https://synapseadlsuat.dfs.core.windows.net/"
-		}
+		},
+		"Ls_adls2_myurl": {
+			"value": "https://synapseadlsuat.dfs.core.windows.net/"
 	}
 }
